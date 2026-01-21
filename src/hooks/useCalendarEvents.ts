@@ -8,12 +8,20 @@ export const useCalendarEvents = (): CalendarEvent[] => {
 
   return useMemo(() => {
     return instances.map((instance) => {
-      const date = parseDate(instance.date);
+      const start = parseDate(instance.date);
+      if (instance.time) {
+        const [hours, minutes] = instance.time.split(':').map(Number);
+        start.setHours(hours, minutes);
+      }
+      const end = new Date(start);
+      if (instance.time) {
+        end.setHours(end.getHours() + 1);
+      }
       return {
         id: instance.id,
         title: instance.title,
-        start: date,
-        end: date,
+        start,
+        end,
         resource: instance,
       };
     });

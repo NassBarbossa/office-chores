@@ -20,6 +20,7 @@ export interface ChoreInstance {
   templateId: string;
   title: string;
   date: string; // YYYY-MM-DD
+  time?: string; // HH:mm (optional, for timed events)
   assigneeId: string | null;
   status: 'pending' | 'completed';
 }
