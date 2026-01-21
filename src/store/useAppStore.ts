@@ -35,6 +35,7 @@ interface AppState {
   // Chore instance actions
   assignChore: (instanceId: string, assigneeId: string | null) => void;
   toggleChoreStatus: (instanceId: string) => void;
+  updateChoreDateTime: (instanceId: string, date: string, time?: string) => void;
 
   // Calendar actions
   setCalendarView: (view: CalendarView) => void;
@@ -123,6 +124,15 @@ export const useAppStore = create<AppState>()(
             instance.id === instanceId
               ? { ...instance, status: instance.status === 'pending' ? 'completed' : 'pending' }
               : instance
+          ),
+        });
+      },
+
+      updateChoreDateTime: (instanceId: string, date: string, time?: string) => {
+        const { choreInstances } = get();
+        set({
+          choreInstances: choreInstances.map((instance) =>
+            instance.id === instanceId ? { ...instance, date, time } : instance
           ),
         });
       },

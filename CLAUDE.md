@@ -111,7 +111,7 @@ Dates stored as `'YYYY-MM-DD'` strings internally, converted to Date objects for
 
 ## Adding New Features or fixing bugs
 
-**IMPORTANT**: When you work on a new feature or bug, create a git branch first. Then work on changes in that branch for the remainder of the session.
+**IMPORTANT**: When you work on a new feature or bug, create a git branch first. Then work on changes in that branch fo
 
 ### New Component
 1. Create in appropriate `src/components/` subdirectory based on domain
