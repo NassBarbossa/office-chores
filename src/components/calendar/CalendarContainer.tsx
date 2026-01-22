@@ -68,7 +68,7 @@ export const CalendarContainer: React.FC = () => {
   const view = calendarView === 'month' ? Views.MONTH : Views.WEEK;
 
   return (
-    <div className="h-full bg-white rounded-lg shadow">
+    <div className="h-full bg-white dark:bg-gray-800 rounded-lg shadow">
       <DnDCalendar
         localizer={localizer}
         events={events}

@@ -67,7 +67,7 @@ export const AddChoreModal: React.FC<AddChoreModalProps> = ({ isOpen, onClose })
         />
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="description" className="text-sm font-medium text-gray-700">
+          <label htmlFor="description" className="text-sm font-medium text-gray-700 dark:text-gray-300">
             Description (optional)
           </label>
           <textarea
@@ -75,7 +75,7 @@ export const AddChoreModal: React.FC<AddChoreModalProps> = ({ isOpen, onClose })
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Additional details..."
-            className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+            className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none placeholder-gray-400 dark:placeholder-gray-500"
             rows={3}
           />
         </div>

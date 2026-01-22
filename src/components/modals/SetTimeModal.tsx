@@ -38,11 +38,11 @@ export const SetTimeModal: React.FC<SetTimeModalProps> = ({ event, newDate, onCl
   return (
     <Modal isOpen={!!event && !!newDate} onClose={handleClose} title="Set Chore Time">
       <div className="space-y-4">
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-gray-600 dark:text-gray-400">
           <strong>Chore:</strong> {event.resource.title}
         </div>
 
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-gray-600 dark:text-gray-400">
           <strong>New Date:</strong> {formattedDate}
         </div>
 
@@ -52,21 +52,21 @@ export const SetTimeModal: React.FC<SetTimeModalProps> = ({ event, newDate, onCl
               type="checkbox"
               checked={noSpecificTime}
               onChange={(e) => setNoSpecificTime(e.target.checked)}
-              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500 dark:bg-gray-800"
             />
-            <span className="text-sm text-gray-700">No specific time (all-day event)</span>
+            <span className="text-sm text-gray-700 dark:text-gray-300">No specific time (all-day event)</span>
           </label>
 
           {!noSpecificTime && (
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Time
               </label>
               <input
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           )}

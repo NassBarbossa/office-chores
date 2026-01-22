@@ -90,3 +90,88 @@
 .rbc-off-range {
   color: #9CA3AF;
 }
+
+/* Dark mode styles */
+:root.dark .rbc-calendar {
+  background-color: #1f2937;
+}
+
+:root.dark .rbc-header {
+  color: #e5e7eb;
+  background-color: #374151;
+}
+
+:root.dark .rbc-today {
+  background-color: #1e3a5f;
+}
+
+:root.dark .rbc-toolbar button {
+  color: #e5e7eb;
+}
+
+:root.dark .rbc-toolbar button:hover {
+  background-color: #374151;
+}
+
+:root.dark .rbc-month-view {
+  border-color: #374151;
+  background-color: #1f2937;
+}
+
+:root.dark .rbc-day-bg + .rbc-day-bg {
+  border-left-color: #374151;
+}
+
+:root.dark .rbc-month-row + .rbc-month-row {
+  border-top-color: #374151;
+}
+
+:root.dark .rbc-header + .rbc-header {
+  border-left-color: #374151;
+}
+
+:root.dark .rbc-off-range-bg {
+  background-color: #111827;
+}
+
+:root.dark .rbc-date-cell > a {
+  color: #e5e7eb;
+}
+
+:root.dark .rbc-off-range {
+  color: #6b7280;
+}
+
+:root.dark .rbc-toolbar-label {
+  color: #e5e7eb;
+}
+
+:root.dark .rbc-time-view,
+:root.dark .rbc-time-header,
+:root.dark .rbc-time-content {
+  border-color: #374151;
+}
+
+:root.dark .rbc-timeslot-group {
+  border-color: #374151;
+}
+
+:root.dark .rbc-time-slot {
+  border-color: #374151;
+}
+
+:root.dark .rbc-day-slot .rbc-time-slot {
+  border-color: #374151;
+}
+
+:root.dark .rbc-time-header-content {
+  border-color: #374151;
+}
+
+:root.dark .rbc-time-gutter {
+  color: #9ca3af;
+}
+
+:root.dark .rbc-current-time-indicator {
+  background-color: #3b82f6;
+}

@@ -41,7 +41,7 @@ export const AssignChoreModal: React.FC<AssignChoreModalProps> = ({ event, onClo
   return (
     <Modal isOpen={!!event} onClose={onClose} title={instance.title}>
       <div className="space-y-4">
-        <div className="text-sm text-gray-600">
+        <div className="text-sm text-gray-600 dark:text-gray-400">
           <strong>Date:</strong> {new Date(instance.date).toLocaleDateString()}
         </div>
 
@@ -53,7 +53,7 @@ export const AssignChoreModal: React.FC<AssignChoreModalProps> = ({ event, onClo
         />
 
         <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-gray-700">Status:</span>
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Status:</span>
           <Button
             variant={isCompleted ? 'secondary' : 'primary'}
             size="sm"
@@ -64,7 +64,7 @@ export const AssignChoreModal: React.FC<AssignChoreModalProps> = ({ event, onClo
         </div>
 
         {isCompleted && (
-          <div className="text-sm text-green-600 font-medium">
+          <div className="text-sm text-green-600 dark:text-green-400 font-medium">
             This chore has been completed!
           </div>
         )}

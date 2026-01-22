@@ -6,6 +6,7 @@ export const useTeamMembers = () => useAppStore((state) => state.teamMembers);
 export const useChoreTemplates = () => useAppStore((state) => state.choreTemplates);
 export const useChoreInstances = () => useAppStore((state) => state.choreInstances);
 export const useCalendarView = () => useAppStore((state) => state.calendarView);
+export const useDarkMode = () => useAppStore((state) => state.darkMode);
 
 export const useTeamMemberById = (id: string | null): TeamMember | undefined => {
   return useAppStore((state) => (id ? state.teamMembers.find((m) => m.id === id) : undefined));

@@ -18,20 +18,25 @@ export const ChoreTemplateList: React.FC = () => {
 
   return (
     <div className="space-y-3">
-      <h2 className="text-lg font-semibold text-gray-900">Chores</h2>
+      <h2 className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+        <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+        Chores
+      </h2>
       <AddChoreButton onClick={() => setIsModalOpen(true)} />
       <ul className="space-y-2">
         {choreTemplates.map((template) => (
           <li
             key={template.id}
-            className="bg-white rounded-md p-2 shadow-sm"
+            className="bg-white dark:bg-gray-700 rounded-md p-2 shadow-sm"
           >
             <div className="flex items-center justify-between">
               <div className="flex-1 min-w-0">
-                <span className="text-sm font-medium text-gray-700 block truncate">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-200 block truncate">
                   {template.title}
                 </span>
-                <span className="text-xs text-gray-500">
+                <span className="text-xs text-gray-500 dark:text-gray-400">
                   {frequencyLabels[template.recurrence.frequency]}
                   {template.recurrence.frequency !== 'none' &&
                     template.recurrence.interval > 1 &&
@@ -51,7 +56,7 @@ export const ChoreTemplateList: React.FC = () => {
           </li>
         ))}
         {choreTemplates.length === 0 && (
-          <li className="text-sm text-gray-500 text-center py-2">
+          <li className="text-sm text-gray-500 dark:text-gray-400 text-center py-2">
             No chores yet
           </li>
         )}

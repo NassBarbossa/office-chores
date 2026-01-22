@@ -23,6 +23,7 @@ interface AppState {
   choreInstances: ChoreInstance[];
   calendarView: CalendarView;
   generatedUntil: string;
+  darkMode: boolean;
 
   // Team member actions
   addTeamMember: (name: string) => void;
@@ -40,6 +41,9 @@ interface AppState {
   // Calendar actions
   setCalendarView: (view: CalendarView) => void;
   ensureInstancesForRange: (endDate: Date) => void;
+
+  // Theme actions
+  toggleDarkMode: () => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -50,6 +54,7 @@ export const useAppStore = create<AppState>()(
       choreInstances: [],
       calendarView: 'month',
       generatedUntil: formatDate(addMonths(new Date(), 3)),
+      darkMode: false,
 
       addTeamMember: (name: string) => {
         const { teamMembers } = get();
@@ -184,9 +189,28 @@ export const useAppStore = create<AppState>()(
           set({ generatedUntil: formatDate(endDate) });
         }
       },
+
+      toggleDarkMode: () => {
+        const { darkMode } = get();
+        const newDarkMode = !darkMode;
+
+        if (newDarkMode) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+
+        set({ darkMode: newDarkMode });
+      },
     }),
     {
       name: 'office-chores-storage',
+      onRehydrateStorage: () => (state) => {
+        // Apply dark mode class on rehydration
+        if (state?.darkMode) {
+          document.documentElement.classList.add('dark');
+        }
+      },
     }
   )
 );

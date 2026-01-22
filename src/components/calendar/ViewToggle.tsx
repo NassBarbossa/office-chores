@@ -13,15 +13,15 @@ export const ViewToggle: React.FC = () => {
   ];
 
   return (
-    <div className="flex bg-gray-100 rounded-md p-1">
+    <div className="flex bg-gray-100 dark:bg-gray-800 rounded-md p-1">
       {views.map((view) => (
         <button
           key={view.value}
           onClick={() => setCalendarView(view.value)}
           className={`px-4 py-1.5 text-sm font-medium rounded transition-colors ${
             calendarView === view.value
-              ? 'bg-white text-gray-900 shadow-sm'
-              : 'text-gray-600 hover:text-gray-900'
+              ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
           }`}
         >
           {view.label}
